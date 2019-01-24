@@ -3,13 +3,24 @@
 Created on Thu Jan 24 17:49:22 2019
 
 @author: Emi Minamitani
+This script reading POSCAR and gather the required POTCAR from specific directory.
+You need to set path which contains the VASP PAW potentials.
+Here I assume the directory tree as
+pot
+|---H/
+    |---POTCAR
+    |---PSCTR
+|---C/
+    |---POTCAR
+    |---PSCTR
+...
 """
 
 from ase import Atoms
 import ase.io
 
 
-
+#set the appropreate path for your environment
 path='./pot'
 
 atoms=ase.io.read('POSCAR', format='vasp')
